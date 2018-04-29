@@ -1,11 +1,14 @@
 function wordFreq(string) {
-    var words = string.replace(/[.]/g, '').split(/\s/);
-    var freqMap = {};
-    words.forEach(function(w) {
-        if (!freqMap[w]) {
-            freqMap[w] = 0;
+    var words = string.split(' ');
+    console.log('words', words)
+    var freqHash = {};
+    words.forEach(function(word) {
+        if (!freqHash[word]) {
+          //if not already in hash, assing it 0 val
+            freqMap[word] = 0;
         }
-        freqMap[w] += 1;
+        //otherwise increment count by 1
+        freqMap[word] += 1;
     });
 
     return freqMap;
